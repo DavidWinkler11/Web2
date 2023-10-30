@@ -8,10 +8,10 @@ const AccountButton = () => {
         Account
       </Link>
       <Link to="/competitions" className="competition-button">
-      Competitions
+        Competitions
       </Link>
     </div>
-  
+
   );
 };
 

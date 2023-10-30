@@ -51,7 +51,7 @@ const Scoreboard = () => {
                 </table>
             </div>
             <AccountButton />
-            <Link to={`/competitions/${competitionId}`} className="scoreboard-button">
+            <Link to={`/competitions/${competitionId}/`} className="scoreboard-button">
                 Back
             </Link>
         </div>

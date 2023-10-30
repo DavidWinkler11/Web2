@@ -8,7 +8,7 @@ function TournamentList({ tournamentIds }) {
       <ul>
         {tournamentIds.map(tournamentId => (
           <li key={tournamentId}>
-            <Link to={`/${tournamentId}`}>Tournament {tournamentId}</Link>
+            <Link to={`/${tournamentId}/`}>Tournament {tournamentId}</Link>
           </li>
         ))}
       </ul>
