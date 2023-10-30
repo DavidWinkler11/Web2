@@ -23,7 +23,8 @@ const Scoreboard = () => {
         setCompetitors(data);
     };
 
-    const sortedCompetitors = competitors.slice().sort((a, b) => b.points - a.points);
+    const newCompetitors = competitors.filter(comp => comp.name !== "Freebie");
+    const sortedCompetitors = newCompetitors.slice().sort((a, b) => b.points - a.points);
 
     useEffect(() => {
         getCompetitors();
