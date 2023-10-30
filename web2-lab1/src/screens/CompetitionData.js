@@ -137,69 +137,72 @@ const CompetitionData = () => {
 
     return (
         <div>
-            <div className="">
-                <h2>{competition.competitionName}</h2>
-                <p className="small-text">Standings: https://labos1-2a8fe.web.app/{currentUrl}/standings</p>
-                <p className="small-text">Matches: https://labos1-2a8fe.web.app/{currentUrl}/</p>
-            </div>
-
             {user && user?.email === competition.createdBy && (
-                <div className="centered-container">
-                    <div className="competition-list-container">
-                        <h3>Matches</h3>
-                        <ul className="competitions-list">
-                            {matches &&
-                                matches.map((match, index) => {
-                                    const matchId = index;
-                                    return (
-                                        <li key={matchId}>
-                                            <div className="match-container">
-                                                <h3>{match.home} vs {match.away}</h3>
-                                                <div className="score-inputs">
-                                                    <input
-                                                        defaultValue={0}
-                                                        type="number"
-                                                        placeholder="Home"
-                                                        name="homeScore"
-                                                        onChange={(event) => handleScoreChange(event, matchId)}
-                                                    />
-                                                    <input
-                                                        defaultValue={0}
-                                                        type="number"
-                                                        placeholder="Away"
-                                                        name="awayScore"
-                                                        onChange={(event) => handleScoreChange(event, matchId)}
-                                                    />
-                                                    <button className="button"
-                                                        onClick={() => handleSubmitMatch(matchId)}
-                                                        disabled={disabledButtons[matchId]} // Set the disabled state based on the array
-                                                    >
-                                                        Submit
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    );
-                                })}
-                        </ul>
+                <div>
+                    <h2>{competition.competitionName}</h2>
+                    <p className="small-text">Standings: https://labos1-2a8fe.web.app{currentUrl}scoreboard</p>
+                    <p className="small-text">Matches: https://labos1-2a8fe.web.app{currentUrl}</p>
 
-                        <AccountButton />
+                    <div className="centered-container">
+                        <div className="competition-list-container">
+                            <h3>Matches</h3>
+                            <ul className="competitions-list">
+                                {matches &&
+                                    matches.map((match, index) => {
+                                        const matchId = index;
+                                        return (
+                                            <li key={matchId}>
+                                                <div className="match-container">
+                                                    <h3>{match.home} vs {match.away}</h3>
+                                                    <div className="score-inputs">
+                                                        <input
+                                                            defaultValue={0}
+                                                            type="number"
+                                                            placeholder="Home"
+                                                            name="homeScore"
+                                                            onChange={(event) => handleScoreChange(event, matchId)}
+                                                        />
+                                                        <input
+                                                            defaultValue={0}
+                                                            type="number"
+                                                            placeholder="Away"
+                                                            name="awayScore"
+                                                            onChange={(event) => handleScoreChange(event, matchId)}
+                                                        />
+                                                        <button className="button"
+                                                            onClick={() => handleSubmitMatch(matchId)}
+                                                            disabled={disabledButtons[matchId]} // Set the disabled state based on the array
+                                                        >
+                                                            Submit
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        );
+                                    })}
+                            </ul>
+
+                            <AccountButton />
+                        </div>
                     </div>
                 </div>
             )}
-            {user && user?.email !== competition.createdBy && (
-                <div className="centered-container">
-                    <div className="competition-list-container">
-                        <h3>Matches</h3>
-                        <ul className="competitions-list">
-                            {matches && matches.map((match, index) => (
-                                <li key={index}>
-                                    <h3>{match.home} vs {match.away}</h3>
+            {user?.email !== competition.createdBy && (
+                <div>
+                    <h2>{competition.competitionName}</h2>
+                    <div className="centered-container">
+                        <div className="competition-list-container">
+                            <h3>Matches</h3>
+                            <ul className="competitions-list">
+                                {matches && matches.map((match, index) => (
+                                    <li key={index}>
+                                        <h3>{match.home} vs {match.away}</h3>
 
-                                </li>
-                            ))}
-                        </ul>
-                        <AccountButton />
+                                    </li>
+                                ))}
+                            </ul>
+                            <AccountButton />
+                        </div>
                     </div>
                 </div>
             )

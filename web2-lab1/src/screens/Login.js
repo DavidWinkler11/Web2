@@ -2,6 +2,7 @@ import React from "react";
 import LoginButton from "../components/LoginButton"
 import Profile from "../components/Profile"
 import { useAuth0 } from "@auth0/auth0-react";
+import AccountButton from "../components/accountButton";
 
 
 const Login = () => {
@@ -21,6 +22,7 @@ const Login = () => {
                     </main>
                 </>
             )}
+            <AccountButton />
         </div>
     );
 };
