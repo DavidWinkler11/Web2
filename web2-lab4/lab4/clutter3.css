@@ -1,0 +1,50 @@
+body {
+    background-color: #fcfcfc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p {
+    color: #333;
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #444;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+a {
+    color: #e67e22;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #d35400;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #2980b9;
+}
