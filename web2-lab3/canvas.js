@@ -7,7 +7,7 @@ canvas.height = window.innerHeight;
 
 var c = canvas.getContext('2d');
 var collisionHappened = false; 
-var intervalTime = 500;
+var intervalTime = 600;
 
 // Funkcija koja računa udaljenost između dvije točke
 function getDistance(x1, y1, x2, y2) {
@@ -159,7 +159,6 @@ function checkHighScore(currentScore) {
    }else{
     if(!localStorage.highscore && currentScore > 0){
         localStorage.highscore = currentScore;
-        
     }
    }
 }
@@ -206,6 +205,7 @@ function gameLoop() {
         asteroids[i].draw();
     }
 
+    // Uz pretpostavku da browser osvježava 60 puta u sekundi
     timer += 1000/60;
     
     // Ako nije došlo do sudara nastavi loop
@@ -227,5 +227,5 @@ function gameLoop() {
         c.fillText("Highscore: " + showTime(localStorage.highscore), canvas.width/2 - 43, canvas.height/2 + 100);
     }
 }
-
+// Započni igru
 gameLoop();

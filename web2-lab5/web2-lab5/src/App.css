@@ -1,0 +1,18 @@
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.sound-wave-container {
+  margin-top: 20px; 
+}
+
+.button-container {
+  margin-top: 20px; 
+  display: flex;
+  gap: 10px;
+}
